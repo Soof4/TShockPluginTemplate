@@ -1,2 +1,2 @@
-### TShockPluginTemplate
+# TShockPluginTemplate
 Description here
