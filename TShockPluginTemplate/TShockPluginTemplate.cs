@@ -22,7 +22,6 @@ namespace TShockPluginTemplate
         {
             Handlers.InitializeHandlers(this);
             Commands.InitializeCommands();
-
         }
 
         protected override void Dispose(bool disposing) {
