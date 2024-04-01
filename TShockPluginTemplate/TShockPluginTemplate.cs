@@ -12,20 +12,22 @@ namespace TShockPluginTemplate
         public override string Author => "Soofa";
         public override string Description => "Description";
         public override Version Version => new Version(1, 0, 0);
-
         public TShockPluginTemplate(Main game) : base(game) { }
+
+        public static Config Config = Config.Reload();
 
         public override void Initialize()
         {
-            throw new NotImplementedException();
+            Handlers.InitializeHandlers(this);
+            Commands.InitializeCommands();
+
         }
 
         protected override void Dispose(bool disposing) {
             if (disposing) {
-                // Unregister the handlers
+                Handlers.DisposeHandlers(this);
             }
         }
     }
-
 }
 
