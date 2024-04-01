@@ -2,6 +2,7 @@
 using Terraria;
 using TerrariaApi.Server;
 using System.Configuration;
+using Microsoft.Data.Sqlite;
 
 namespace TShockPluginTemplate
 {
@@ -15,6 +16,7 @@ namespace TShockPluginTemplate
         public TShockPluginTemplate(Main game) : base(game) { }
 
         public static Config Config = Config.Reload();
+        public static DatabaseManager DBManager = new DatabaseManager(new SqliteConnection("Data Source=" + DatabaseManager.DatabasePath));
 
         public override void Initialize()
         {

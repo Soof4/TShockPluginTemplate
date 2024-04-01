@@ -11,6 +11,7 @@ namespace TShockPluginTemplate
         public static string ConfigPath = Path.Combine(TShock.SavePath, "TShockPluginTemplateConfig.json");
         public string Property01 = "SomeDefaultValue";
         public int Property02 = 420;
+        
         public static Config Reload()
         {
             Config? c = null;
@@ -25,7 +26,7 @@ namespace TShockPluginTemplate
                 c = new Config();
                 File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(c, Formatting.Indented));
             }
-
+            
             return c;
         }
     }
