@@ -1,4 +1,3 @@
-using IL.Terraria.GameContent.Biomes;
 using Newtonsoft.Json;
 using Terraria;
 using TShockAPI;

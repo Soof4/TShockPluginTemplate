@@ -1,7 +1,6 @@
 ﻿using TShockAPI;
 using Terraria;
 using TerrariaApi.Server;
-using System.Configuration;
 using Microsoft.Data.Sqlite;
 
 namespace TShockPluginTemplate
