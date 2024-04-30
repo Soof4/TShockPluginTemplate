@@ -5,28 +5,33 @@ using TShockAPI;
 namespace TShockPluginTemplate
 {
 
-    public class Config
+    public class Configuration
     {
         public static string ConfigPath = Path.Combine(TShock.SavePath, "TShockPluginTemplateConfig.json");
         public string Property01 = "SomeDefaultValue";
         public int Property02 = 420;
         
-        public static Config Reload()
+        public static Configuration Reload()
         {
-            Config? c = null;
+            Configuration? c = null;
 
             if (File.Exists(ConfigPath))
             {
-                c = JsonConvert.DeserializeObject<Config>(File.ReadAllText(ConfigPath));
+                c = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(ConfigPath));
             }
 
             if (c == null)
             {
-                c = new Config();
+                c = new Configuration();
                 File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(c, Formatting.Indented));
             }
             
             return c;
+        }
+        
+        public void Write()
+        {
+            File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(this, Formatting.Indented));
         }
     }
 }

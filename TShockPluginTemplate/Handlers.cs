@@ -19,7 +19,7 @@ namespace TShockPluginTemplate
 
         private static void OnReload(ReloadEventArgs args)
         {
-            TShockPluginTemplate.Config = Config.Reload();
+            TShockPluginTemplate.Config = Configuration.Reload();
         }
     }
 }

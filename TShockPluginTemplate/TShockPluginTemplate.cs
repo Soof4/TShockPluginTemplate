@@ -14,7 +14,7 @@ namespace TShockPluginTemplate
         public override Version Version => new Version(1, 0, 0);
         public TShockPluginTemplate(Main game) : base(game) { }
 
-        public static Config Config = Config.Reload();
+        public static Configuration Config = Configuration.Reload();
         public static DatabaseManager DBManager = new DatabaseManager(new SqliteConnection("Data Source=" + DatabaseManager.DatabasePath));
 
         public override void Initialize()
